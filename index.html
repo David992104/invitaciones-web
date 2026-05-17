@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mis XV - Citlalli</title>
+
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+
+  <!-- INTRO -->
+  <div class="intro" id="intro">
+
+    <div class="intro-content">
+
+      <h1>Mis XV</h1>
+
+      <button onclick="enterSite()">
+        Abrir invitación
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- MUSICA -->
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">
+    🎵
+  </button>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="content-wrapper">
+
+
+      <h2 class="fade">
+        Citlalli Denisse
+      </h2>
+
+      <p id="countdown" class="fade"></p>
+
+  </section>
+
+  <!-- MENSAJE -->
+  <section class="section hidden">
+
+    <h3 class="fade">
+      Con gran alegría
+    </h3>
+
+    <p class="fade">
+      Te invito a celebrar este día tan especial conmigo
+    </p>
+
+  </section>
+
+  <!-- DETALLES -->
+  <section class="section hidden">
+
+    <h3 class="fade">
+      Detalles
+    </h3>
+
+    <p class="fade">
+      15 Octubre 2026
+    </p>
+
+    <p class="fade">
+      Iglesia 5:00 PM
+    </p>
+
+    <p class="fade">
+      Recepción 7:00 PM
+    </p>
+
+    <a class="btn fade" href="https://maps.google.com" target="_blank">
+      Ver ubicación
+    </a>
+
+  </section>
+
+  <!-- RSVP -->
+  <section class="section hidden">
+
+    <h3 class="fade">
+      Confirma tu asistencia
+    </h3>
+
+    <a class="btn fade" href="https://wa.me/5215620057915">
+      Confirmar por WhatsApp
+    </a>
+
+  </section>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
