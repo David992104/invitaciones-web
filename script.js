@@ -7,6 +7,7 @@ document.body.style.overflow = "hidden";
 
 function enterSite(){
   const intro = document.getElementById("intro");
+  const music = document.getElementById("music");
   intro.style.opacity = "0";
   setTimeout(() => {
     intro.style.display = "none";
@@ -19,7 +20,23 @@ function enterSite(){
       .forEach(el => {
         el.classList.add("show");
       });
-  }, 800);
+  }, 1000);
+
+  /* =========================
+     MUSIC FADE IN
+  ========================= */
+
+  music.volume = 0;
+  music.play();
+  let volume = 0;
+  const fadeAudio = setInterval(()=>{
+    if(volume < 0.4){
+      volume += 0.02;
+      music.volume = volume;
+    }else{
+      clearInterval(fadeAudio);
+    }
+  },100);
 }
 
 // =======================
@@ -69,33 +86,23 @@ setInterval(() => {
 
 const observer =
   new IntersectionObserver((entries) => {
-
     entries.forEach(entry => {
-
       if(entry.isIntersecting){
-
         entry.target.classList.add("show");
-
       }
-
     });
-
   }, {
-    threshold:.2
+    threshold:.5
   });
 
 document
   .querySelectorAll(".section")
   .forEach(section => {
-
     observer.observe(section);
-
   });
 
 document
   .querySelectorAll(".section .fade")
   .forEach(el => {
-
     observer.observe(el);
-
   });
