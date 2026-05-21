@@ -6,31 +6,20 @@ document.body.style.overflow = "hidden";
 // =======================
 
 function enterSite(){
-
   const intro = document.getElementById("intro");
-
   intro.style.opacity = "0";
-
   setTimeout(() => {
-
     intro.style.display = "none";
-
     document.body.style.overflow = "auto";
-
     document
       .querySelector(".hero")
       .classList.add("show");
-
     document
       .querySelectorAll(".hero .fade")
       .forEach(el => {
-
         el.classList.add("show");
-
       });
-
   }, 800);
-
 }
 
 // =======================
@@ -57,26 +46,14 @@ function toggleMusic(){
 // COUNTDOWN
 // =======================
 
-const countdown =
-  document.getElementById("countdown");
-
-const eventDate =
-  new Date("Oct 15, 2026 17:00:00").getTime();
+const countdown = document.getElementById("countdown");
+const eventDate = new Date("Oct 17, 2026 16:00:00").getTime();
 
 setInterval(() => {
-
   const now = new Date().getTime();
-
   const diff = eventDate - now;
-
-  const days =
-    Math.floor(diff / (1000 * 60 * 60 * 24));
-
-  const hours =
-    Math.floor(
-      (diff % (1000 * 60 * 60 * 24)) /
-      (1000 * 60 * 60)
-    );
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
   countdown.innerHTML = `
     Faltan <span>${days}</span> días

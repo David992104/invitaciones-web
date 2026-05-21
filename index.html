@@ -2,96 +2,88 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Mis XV - Citlalli</title>
-
   <!-- FUENTES -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap"
     rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
-
 </head>
 
 <body>
-
   <!-- INTRO -->
   <div class="intro" id="intro">
-
     <div class="intro-content">
-
-      <h1>Mis XV</h1>
-
-      <button onclick="enterSite()">
-        Abrir invitación
-      </button>
-
+      <p class="intro-xv">Mis XV</p>
+      <h1 class="intro-name">Citlalli</h1>
+      <p class="intro-subtitle">Una velada real</p>
+      <button onclick="enterSite()">Abrir invitación</button>
     </div>
-
   </div>
 
   <!-- MUSICA -->
   <audio id="music" loop>
     <source src="music.mp3" type="audio/mp3">
   </audio>
-
-  <button class="music-btn" onclick="toggleMusic()">
-    🎵
-  </button>
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
 
   <!-- HERO -->
   <section class="hero">
     <div class="content-wrapper">
-
-
       <h2 class="fade">
         Citlalli Denisse
       </h2>
-
       <p id="countdown" class="fade"></p>
-
+    </div>
   </section>
 
   <!-- MENSAJE -->
   <section class="section hidden">
-
     <h3 class="fade">
       Con gran alegría
     </h3>
-
     <p class="fade">
-      Te invito a celebrar este día tan especial conmigo
+      Hoy, al abrir las puertas de esta nueva etapa de mi vida, deseo compartir contigo la magia de un sueño que
+      comienza. Entre sonrisas, ilusiones y momentos que quedarán guardados para siempre en mi corazón, celebraré la
+      dicha de cumplir quince años rodeada de las personas que más quiero. Tu presencia hará de esta noche un recuerdo
+      inolvidable, lleno de alegría, música y emoción.
     </p>
 
   </section>
 
   <!-- DETALLES -->
   <section class="section hidden">
-
     <h3 class="fade">
-      Detalles
+      Detalles de Misa
     </h3>
-
     <p class="fade">
-      15 Octubre 2026
+      17 Octubre 2026
     </p>
-
     <p class="fade">
-      Iglesia 5:00 PM
+      Iglesia 4:00 PM
     </p>
-
-    <p class="fade">
-      Recepción 7:00 PM
-    </p>
-
-    <a class="btn fade" href="https://maps.google.com" target="_blank">
+    <a class="btn fade" href="https://maps.app.goo.gl/hALSwT9dajKZ23TCA" target="_blank">
       Ver ubicación
     </a>
+  </section>
 
+  <section class="section hidden">
+    <h3 class="fade">
+      Detalles de Recepcion
+    </h3>
+    <p class="fade">
+      17 Octubre 2026
+    </p>
+    <p class="fade">
+      Recepción 6:00 PM
+    </p>
+    <a class="btn fade" href="https://maps.app.goo.gl/hALSwT9dajKZ23TCA" target="_blank">
+      Ver ubicación
+    </a>
   </section>
 
   <!-- RSVP -->
