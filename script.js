@@ -6,37 +6,85 @@ document.body.style.overflow = "hidden";
 // =======================
 
 function enterSite(){
-  const intro = document.getElementById("intro");
-  const music = document.getElementById("music");
-  intro.style.opacity = "0";
-  setTimeout(() => {
-    intro.style.display = "none";
+
+  const intro =
+    document.getElementById("intro");
+
+  const hero =
+    document.querySelector(".hero");
+
+  const music =
+    document.getElementById("music");
+
+  /* =========================
+     ABRIR CARTA
+  ========================= */
+
+  intro.classList.add("open");
+
+  /* =========================
+     HERO REVEAL
+  ========================= */
+
+  setTimeout(()=>{
+
+    hero.classList.add("show-hero");
+
     document.body.style.overflow = "auto";
-    document
-      .querySelector(".hero")
-      .classList.add("show");
+
     document
       .querySelectorAll(".hero .fade")
-      .forEach(el => {
+      .forEach(el=>{
+
         el.classList.add("show");
+
       });
-  }, 1000);
+
+  },1200);
+
+  /* =========================
+     OCULTAR INTRO
+  ========================= */
+
+  setTimeout(()=>{
+
+    intro.style.opacity = "0";
+
+  },1700);
+
+  setTimeout(()=>{
+
+    intro.style.display = "none";
+
+  },2600);
 
   /* =========================
      MUSIC FADE IN
   ========================= */
 
-  music.volume = 0;
-  music.play();
-  let volume = 0;
-  const fadeAudio = setInterval(()=>{
-    if(volume < 0.4){
-      volume += 0.02;
-      music.volume = volume;
-    }else{
-      clearInterval(fadeAudio);
-    }
-  },100);
+  if(music){
+
+    music.volume = 0;
+
+    music.play();
+
+    let volume = 0;
+
+    const fadeAudio = setInterval(()=>{
+
+      if(volume < 0.4){
+
+        volume += 0.02;
+
+        music.volume = volume;
+
+      }else{
+
+        clearInterval(fadeAudio);
+      }
+
+    },100);
+  }
 }
 
 // =======================
