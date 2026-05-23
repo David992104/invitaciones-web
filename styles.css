@@ -559,19 +559,9 @@ body{
   align-items:center;
   padding:20px;
   overflow:hidden;
-}
-
-/* =========================
-   HERO REVEAL
-========================= */
-
-.hero{
-
   opacity:0;
-
   transform:
     scale(1.03);
-
   transition:
     opacity 1.8s ease,
     transform 2s ease;
@@ -606,12 +596,46 @@ body{
 }
 
 .hero h2{
-  font-family:var(--font-royal);
-  color:var(--title-color);
-  letter-spacing:35px;
+  position:relative;
+  z-index:2;
+  font-family:
+    var(--font-royal);
+  font-size:5rem;
+  font-weight:600;
+  letter-spacing:24px;
   text-transform:uppercase;
-  margin-bottom:20px;
-  font-size:4rem;
+  color:var(--title-color);
+  line-height:1.15;
+  margin-bottom:35px;
+  text-shadow:
+    0 0 18px rgba(180,210,255,.10),
+    0 0 40px rgba(168,85,247,.08);
+  opacity:0;
+  filter:
+    blur(10px);
+  transform:
+    translateY(45px)
+    scale(.97);
+  transition:
+    opacity 2.2s ease,
+    transform 2.2s ease,
+    filter 2.2s ease,
+    text-shadow 3s ease;
+}
+/* =========================
+   HERO TITLE REVEAL
+========================= */
+
+.hero.show-hero h2{
+  opacity:1;
+  filter:
+    blur(0);
+  transform:
+    translateY(0)
+    scale(1);
+  text-shadow:
+    0 0 25px rgba(180,210,255,.16),
+    0 0 60px rgba(168,85,247,.10);
 }
 
 .hero p{
@@ -822,12 +846,80 @@ body{
 }
 
 .fade.show{
-
   opacity:1;
-
   transform:translateY(0);
-
   transition:all 1s ease;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+.countdown-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:24px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+/* =========================
+   CARD
+========================= */
+.countdown-card{
+  position:relative;
+  min-width:130px;
+  padding:28px 24px;
+  border-radius:28px;
+  background:var(--glass-bg);
+  backdrop-filter:
+    blur(var(--glass-blur));
+  border:
+    1px solid var(--glass-border);
+  box-shadow:
+    var(--glass-shadow);
+  overflow:hidden;
+}
+
+/* BRILLO */
+.countdown-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.05),
+      transparent 40%
+    );
+}
+
+/* =========================
+   NUMBER
+========================= */
+.count-number{
+  display:block;
+  font-family:
+    var(--font-royal);
+  font-size:3rem;
+  font-weight:600;
+  letter-spacing:4px;
+  color:var(--title-color);
+  margin-bottom:10px;
+  text-shadow:
+    0 0 18px rgba(180,210,255,.12);
+}
+
+/* =========================
+   LABEL
+========================= */
+.count-label{
+  font-family:
+    var(--font-body);
+  font-size:.85rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--text-muted);
 }
 
 /* =========================
@@ -972,5 +1064,14 @@ body{
 
     padding:
       0 16px 100px;
+  }
+
+  .countdown-card{
+    min-width:95px;
+    padding:22px 18px;
+  }
+
+  .count-number{
+    font-size:2.2rem;
   }
 }

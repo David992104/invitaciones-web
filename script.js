@@ -119,12 +119,29 @@ setInterval(() => {
   const diff = eventDate - now;
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) /(1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) /1000);
 
   countdown.innerHTML = `
-    Faltan <span>${days}</span> días
-    <br>
-    <small>${hours} horas</small>
-  `;
+    <div class="countdown-container">
+    <div class="countdown-card">
+      <span class="count-number">${days}</span>
+      <span class="count-label">Días</span>
+    </div>
+    <div class="countdown-card">
+      <span class="count-number">${hours}</span>
+      <span class="count-label">Horas</span>
+    </div>
+    <div class="countdown-card">
+      <span class="count-number">${minutes}</span>
+      <span class="count-label">Min</span>
+    </div>
+    <div class="countdown-card">
+      <span class="count-number">${seconds}</span>
+      <span class="count-label">Sec</span>
+    </div>
+  </div>
+`;
 
 }, 1000);
 
