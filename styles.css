@@ -8,12 +8,6 @@ html{
 
 }
 
-body{
-  outline:3px solid red;
-}
-.section:last-of-type{
-  outline:3px solid lime;
-}
 /* =========================
    PALETA DE COLORES
 ========================= */
