@@ -1,3 +1,19 @@
+body,
+html{
+
+  scroll-behavior:smooth;
+
+  background-color:
+    var(--bg-dark-2);
+
+}
+
+body{
+  outline:3px solid red;
+}
+.section:last-of-type{
+  outline:3px solid lime;
+}
 /* =========================
    PALETA DE COLORES
 ========================= */
@@ -652,6 +668,10 @@ body{
   color:var(--text-soft);
 }
 
+.section:last-of-type{
+  margin-bottom:0px;
+}
+
 /* =========================
    BOTONES
 ========================= */
@@ -846,6 +866,108 @@ body{
 }
 
 /* =========================
+   ATMOSFERA GLOBAL
+========================= */
+
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+}
+
+body::before{
+  width:900px;
+  height:900px;
+  left:-250px;
+  top:-150px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(59,130,246,.10),
+      transparent 70%
+    );
+  filter:blur(120px);
+  animation:
+    atmosphereBlue 35s ease-in-out infinite;
+}
+
+body::after{
+  width:900px;
+  height:900px;
+  right:-250px;
+  bottom:-150px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(168,85,247,.08),
+      transparent 70%
+    );
+  filter:blur(120px);
+  animation:
+    atmospherePurple 45s ease-in-out infinite;
+}
+
+/* =========================
+   IMPERIAL SPARKLES
+========================= */
+
+.sparkles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.sparkle{
+  position:absolute;
+--scroll-offset: 0px;
+  width:2px;
+  height:2px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.9);
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,.7),
+    0 0 18px rgba(196,215,255,.4);
+
+  animation:sparkleGlow 4s ease-out forwards;
+}
+
+
+
+@keyframes sparkleGlow{
+
+0%{
+  opacity:0;
+  transform:
+    translateY(var(--scroll-offset))
+    scale(.5);
+}
+
+30%{
+  opacity:.8;
+  transform:
+    translateY(var(--scroll-offset))
+    scale(1.8);
+}
+
+100%{
+  opacity:0;
+  transform:
+    translateY(var(--scroll-offset))
+    scale(.5);
+}
+}
+
+/* =========================
    GLOW ANIMATIONS
 ========================= */
 
@@ -930,6 +1052,48 @@ body{
     transform:
       scale(1)
       translate(0,0);
+  }
+}
+
+@keyframes atmosphereBlue{
+
+  0%{
+    transform:
+      translate(0,0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translate(120px,60px)
+      scale(1.1);
+  }
+
+  100%{
+    transform:
+      translate(0,0)
+      scale(1);
+  }
+}
+
+@keyframes atmospherePurple{
+
+  0%{
+    transform:
+      translate(0,0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translate(-100px,-80px)
+      scale(1.08);
+  }
+
+  100%{
+    transform:
+      translate(0,0)
+      scale(1);
   }
 }
 

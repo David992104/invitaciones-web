@@ -172,3 +172,72 @@ document
   .forEach(el => {
     observer.observe(el);
   });
+
+  /* =========================
+   IMPERIAL SPARKLES
+========================= */
+
+const sparkleContainer =
+  document.getElementById("sparkles");
+
+function createSparkle(){
+  const sparkle =
+    document.createElement("span");
+
+  sparkle.classList.add("sparkle");
+
+  sparkle.dataset.speed =
+  (Math.random() * 0.03 + 0.01)
+    .toFixed(3);
+const x =
+  Math.random() * 100;
+
+const y =
+  Math.random() * 100;
+
+if(
+  x > 30 &&
+  x < 70 &&
+  y > 30 &&
+  y < 70
+){
+  return;
+}
+  sparkle.style.left = x + "%";
+
+  sparkle.style.top = y + "%";
+
+  const size = Math.random() * 3 + 1;
+
+  sparkle.style.width =
+    size + "px";
+
+  sparkle.style.height =
+    size + "px";
+
+  sparkleContainer.appendChild(
+    sparkle
+  );
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 5000);
+}
+
+/* genera un destello aleatorio */
+setInterval(() => {
+  const amount =
+    Math.floor(Math.random() * 3) + 1;
+
+  for(let i=0; i<amount; i++){
+
+    createSparkle();
+
+  }
+}, 2000);
+
+/* =========================
+   SPARKLE PARALLAX
+========================= */
+
+
