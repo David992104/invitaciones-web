@@ -604,6 +604,40 @@ body{
   overflow:hidden;
 }
 
+.section-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.section-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:
+    blur(5px)
+    brightness(.50);
+  transform:scale(1.15);
+}
+
+.section-content{
+  position:relative;
+  z-index:2;
+}
+
+.section-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,6,23,.45),
+      rgba(2,6,23,.75)
+    );
+}
+
 /* BRILLO INTERNO */
 
 .section::before{
