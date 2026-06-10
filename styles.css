@@ -1,11 +1,7 @@
 body,
 html{
-
-  scroll-behavior:smooth;
-
-  background-color:
-    var(--bg-dark-2);
-
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark-2);
 }
 
 /* =========================
@@ -25,11 +21,9 @@ html{
      GLOWS
   ========================= */
 
-  --glow-blue:
-    rgba(59,130,246,.35);
+  --glow-blue: rgba(59,130,246,.35);
 
-  --glow-purple:
-    rgba(168,85,247,.18);
+  --glow-purple: rgba(168,85,247,.18);
 
   --hero-glow:
     rgba(59,130,246,.18);
@@ -595,48 +589,33 @@ body{
 ========================= */
 
 .section{
-
   position:relative;
-
   margin:100px auto;
-
   padding:100px 50px;
-
   max-width:950px;
-
   border-radius:32px;
-
   background:var(--glass-bg);
-
   backdrop-filter:
     blur(var(--glass-blur));
-
   border:
     1px solid var(--glass-border);
-
   box-shadow:
     var(--glass-shadow);
-
   overflow:hidden;
 }
 
 /* BRILLO INTERNO */
 
 .section::before{
-
   content:"";
-
   position:absolute;
-
   inset:0;
-
   background:
     linear-gradient(
       135deg,
       var(--glass-highlight),
       transparent 30%
     );
-
   pointer-events:none;
 }
 
@@ -1062,7 +1041,7 @@ body::after{
   }
 
   .section{
-    margin:50px auto;
+    margin:50px 5% 50px 5%;
     padding:
       55px 24px;
   }
