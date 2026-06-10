@@ -907,61 +907,6 @@ body::after{
 }
 
 /* =========================
-   IMPERIAL SPARKLES
-========================= */
-
-.sparkles{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:1;
-}
-
-.sparkle{
-  position:absolute;
---scroll-offset: 0px;
-  width:2px;
-  height:2px;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,.9);
-
-  box-shadow:
-    0 0 8px rgba(255,255,255,.7),
-    0 0 18px rgba(196,215,255,.4);
-
-  animation:sparkleGlow 4s ease-out forwards;
-}
-
-
-
-@keyframes sparkleGlow{
-
-0%{
-  opacity:0;
-  transform:
-    translateY(var(--scroll-offset))
-    scale(.5);
-}
-
-30%{
-  opacity:.8;
-  transform:
-    translateY(var(--scroll-offset))
-    scale(1.8);
-}
-
-100%{
-  opacity:0;
-  transform:
-    translateY(var(--scroll-offset))
-    scale(.5);
-}
-}
-
-/* =========================
    GLOW ANIMATIONS
 ========================= */
 
