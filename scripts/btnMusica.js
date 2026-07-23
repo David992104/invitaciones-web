@@ -17,4 +17,14 @@ function toggleMusic() {
   }
 }
 
-
+document.addEventListener("visibilitychange", () => {
+  const music = document.getElementById("music");
+  const btn = document.getElementById("musicBtn");
+  if(document.hidden){
+    if(!music.paused){
+      music.pause();
+      btn.innerHTML = "🎼";
+      btn.classList.add("paused");
+    }
+  }
+});
